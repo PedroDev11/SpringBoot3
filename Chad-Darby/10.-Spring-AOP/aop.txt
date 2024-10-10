@@ -1,0 +1,30 @@
+Programming technique based on concept of an Aspect, so an Aspect encapsulates cross-cutting logic.
+Cross-cutting concerns, so a concern means logic or functionality, so it's like, basic infrastructure code that
+all applications will need.
+Cross-cutting concerns example:
+We can basically take that logging code and capsulate it into a reusable module or reusable class and then, we can
+have that code de-called when thay make appropriate calls to account controller.
+A similar thing with security, so you can kinda encapsulate that common logic and then apply it accordingly based on 
+different areas of your system.
+Aspect can be reused at multiple locations, so an aspect is really just a class, so that same aspect or class can be applied
+to different parts of your project based on configuration.
+Apply on account controller, account service, account DAO.
+
+Advantages
+Reusable modules
+Resolve code tangling
+Resolve code scatter
+Applied selectively based on configuration
+
+Terminology:
+Advice: What action is taken and when it should be applied
+Join point: When to apply code during program execution
+Poincut: A predicate expression for where advice should be applied
+Weaving: Connect aspects to target objects to create an advised object -> run-time weaving is the slowest
+
+Advice Types:
+Before advice: run before themethod 
+After finally advice: run after the method (finally)
+After returning advice: run after the method (success execution)
+after throwing advice: run after the method (if a exception thrown)
+around advice: run before and after the method

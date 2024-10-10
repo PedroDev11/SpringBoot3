@@ -1,0 +1,17 @@
+server:
+  port: 8585
+  error:
+    include-stacktrace: never
+jms:
+  jwt:
+    security:
+      enabled: true
+    timezone: "UTC"
+    issuer: "www.programacion"
+    token: 
+      auth:
+        path: "/v1.0/oauth/client_credential/accessToken"
+      secret: "my secret key"
+      expiresIn: 3600
+    excluded:
+      path: "/v1.0/multi/v1.0/otraexclusion"

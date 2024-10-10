@@ -1,0 +1,47 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Form</title>
+  </head>
+  <body>
+    <h1>Student sign up</h1>
+    <form
+      th:action="@{/processStudentForm}"
+      th:object="${student}"
+      method="POST"
+    >
+      <!-- "*{}" is shortcut syntax for: ${student.firstName} -->
+      First name: <input type="text" th:field="*{firstName}" /> <br />
+      Last name: <input type="text" th:field="*{lastName}" /> <br />
+
+      Country:
+      <select th:field="*{country}">
+        <option
+          th:each="tempCountry : ${countries}"
+          th:value="${tempCountry}"
+          th:text="${tempCountry}"
+        />
+      </select>
+      <br />
+
+      Favorite programming language:
+      <input 
+        type="radio" 
+        th:field="*{favoriteLanguage}" 
+        th:each="tempLang : ${languages}" 
+        th:value="${tempLang}" 
+        th:text="${tempLang}" ></input><br>
+
+      Favorite operating system:
+      <input 
+        type="checkbox" 
+        th:field="*{favoriteSystems}"
+        th:each="tempSystem : ${systems}" 
+        th:value="${tempSystem}" 
+        th:text="${tempSystem}" /><br>
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

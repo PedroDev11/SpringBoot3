@@ -1,0 +1,16 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- @ Symbol reference context path of your application (app root) -->
+    <link rel="stylesheet" th:href="@{/css/demo.css}" />
+    <title>Thymeleaf Demo</title>
+  </head>
+  <body>
+    Student name:
+    <p th:text="${param.studentName}" class="funny" />
+    <br />
+    The message:
+    <p th:text="${message}" class="funny" />
+  </body>
+</html>
